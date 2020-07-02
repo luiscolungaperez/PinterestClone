@@ -1,0 +1,145 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: FontAwesome, "Roboto", sans-serif;
+}
+
+.header {
+  width: 100%;
+  height: 80px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.header__brand {
+  width: 50px;
+}
+
+.header__brand img {
+  width: 100%;
+}
+
+.header__navbar {
+  width: 90%;
+}
+
+.header__navbar ul {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.header__navbar ul li {
+  list-style: none;
+  border-radius: 25px;
+  text-decoration: none;
+  padding: 10px 15px;
+  color: #262626;
+  font-size: 18px;
+  font-weight: 800;
+}
+
+.header__navbar ul li:hover {
+  background-color: #efefef;
+  color: #262626;
+}
+
+.header__navbar ul > li.active {
+  color: #ffffff;
+  background-color: #262626;
+}
+
+#search {
+  font-weight: 800;
+  font-size: 15px;
+  text-decoration: inherit;
+  border-radius: 20px;
+  width: 600px;
+  outline: none;
+  background-color: #efefef;
+  border: none;
+  padding-left: 15px;
+}
+
+#search::placeholder {
+  padding-left: 15px;
+}
+
+.content {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, 300px);
+  grid-gap: 5px;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.card__item {
+  display: flex;
+}
+
+.card__item img {
+  align-self: center;
+  width: 100%;
+  border-radius: 5px;
+  transition: 1s;
+  position: relative;
+}
+
+.card__item img:hover {
+  filter: grayscale(100%);
+}
+
+.card__item button {
+  height: 30px;
+  padding: 5px 10px;
+}
+
+.card__item button:nth-child(2) {
+  position: relative;
+  z-index: 1;
+  bottom: 0px;
+  right: 0;
+}
+.card__item button:nth-child(3) {
+  z-index: 1;
+  top: 10px;
+}
+.card__item button:nth-child(4) {
+  z-index: 1;
+  top: 50px;
+}
+.card__item button:nth-child(5) {
+  top: 10px;
+  z-index: 1;
+}
+
+.level-1 {
+  grid-row-end: span 3;
+}
+.level-2 {
+  grid-row-end: span 2;
+}
+.level-3 {
+  grid-row-end: span 1;
+}
+
+@media screen and (max-width: 900px) {
+  .header__navbar ul {
+    justify-content: space-around;
+  }
+
+  .header__navbar ul li:nth-child(n + 1) {
+    display: none;
+  }
+
+  .header__navbar ul li:last-child {
+    display: block;
+  }
+
+  #search {
+    width: 350px;
+  }
+}
